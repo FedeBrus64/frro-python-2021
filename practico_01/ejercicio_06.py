@@ -7,7 +7,19 @@ def numeros_al_final_basico(lista: List[Union[float, str]]) -> List[Union[float,
     """Toma una lista de enteros y strings y devuelve una lista con todos los
     elementos numéricos al final.
     """
-    pass # Completar
+    
+    listaFinal=[]
+
+    for i in range(len(lista)):
+        if type(lista[i]) == str:
+            listaFinal.append(lista[i])
+
+    for i in range(len(lista)):
+        if type(lista[i]) != str:
+            listaFinal.append(lista[i])
+
+    return listaFinal
+        
 
 
 # NO MODIFICAR - INICIO
@@ -20,7 +32,13 @@ assert numeros_al_final_basico([3, "a", 1, "b", 10, "j"]) == ["a", "b", "j", 3, 
 
 def numeros_al_final_comprension(lista: List[Union[float, str]]) -> List[Union[float, str]]:
     """Re-escribir utilizando comprensión de listas."""
-    pass # Completar
+
+    listaletras = [x for x in lista if type(x) == str]
+    listanumeros = [x for x in lista if type(x) != str] 
+    listafinal = listaletras + listanumeros
+    return listafinal   
+    
+    
 
 
 # NO MODIFICAR - INICIO
@@ -35,7 +53,7 @@ def numeros_al_final_sorted(lista: List[Union[float, str]]) -> List[Union[float,
     """Re-escribir utilizando la función sorted con una custom key.
     Referencia: https://docs.python.org/3/library/functions.html#sorted
     """
-    pass # Completar
+    return sorted(lista, key = lambda x: type(x) == str, reverse= True)
 
 
 # NO MODIFICAR - INICIO
@@ -50,7 +68,13 @@ def numeros_al_final_filter(lista: List[Union[float, str]]) -> List[Union[float,
     """CHALLENGE OPCIONAL - Re-escribir utilizando la función filter.
     Referencia: https://docs.python.org/3/library/functions.html#filter
     """
-    pass # Completar
+
+    lista1 = filter(lambda letra: type(letra)==str, lista) 
+    lista2 = filter(lambda numero: type(numero)!=str, lista) 
+
+    listafinal = list(lista1) + list(lista2)
+
+    return listafinal
 
 
 # NO MODIFICAR - INICIO
@@ -64,8 +88,8 @@ if __name__ == "__main__":
 
 def numeros_al_final_recursivo(lista: List[Union[float, str]]) -> List[Union[float, str]]:
     """CHALLENGE OPCIONAL - Re-escribir de forma recursiva."""
-    pass # Completar
-
+    
+    
 
 # NO MODIFICAR - INICIO
 if __name__ == "__main__":
