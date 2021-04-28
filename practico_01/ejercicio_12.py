@@ -19,10 +19,16 @@ def combinar_basico(nombres: List[str], precios: List[float]) -> Tuple[Any]:
 
     Restricción: Resolver utilizando un bucle for.
     """
-    tuplas = []
-    for nombre in nombres:     
-        tuplas.append((nombre,precio))
-    return tuplas
+    lista2=[]
+    tupla=()
+    for i in range(len(nombres)):
+        lista=[]
+        lista.append(nombres[i])
+        lista.append(precios[i])
+        tupla= tuple(lista)
+        lista2.append(tupla)
+    tupla2 = tuple(lista2)
+    return tupla2
 
 
 # NO MODIFICAR - INICIO
@@ -46,9 +52,25 @@ def combinar_enumerate(nombres: List[str], precios: List[float], ids: List[int])
     """Re-Escribir utilizando enumerate y agregando un nuevo componente.
     Referencia: https://docs.python.org/3/library/functions.html#enumerate
     """
-    pass # Completar
+    """
+    lista2=[]
+    tupla2=()
+    tuplafinal=()
+    for i in range(len(nombres)):
+        lista=[]
+        lista.append(nombres[i])
+        lista.append(precios[i])
+        lista2.append(lista)
 
 
+    for j in enumerate(lista2):
+        lista2[j].append(ids[j])
+        tupla2= tuple(lista2)
+        tuplafinal.append(tupla2)
+    
+    return tupla2
+
+print(combinar_enumerate(nombre_articulos, precio_articulos, id_articulos))
 # NO MODIFICAR - INICIO
 respuesta = (
     ("ventana", 100.48, 6852),
@@ -58,7 +80,7 @@ respuesta = (
 
 assert combinar_enumerate(nombre_articulos, precio_articulos, id_articulos) == respuesta
 # NO MODIFICAR - FIN
-
+"""
 
 ###############################################################################
 
@@ -70,8 +92,8 @@ def combinar_zip(nombres: List[str], precios: List[float], ids: List[int]) -> Tu
     """Re-Escribir utilizando zip.
     Referencia: https://docs.python.org/3/library/functions.html#zip
     """
-    pass # Completar
-
+        
+    return tuple(zip(nombres, precios, ids))
 
 # NO MODIFICAR - INICIO
 respuesta = (
@@ -96,7 +118,8 @@ def combinar_zip_args(*args) -> Tuple[Any]:
     """Re-Escribir utilizando zip y una cantidad arbitraria de componentes.
     Referencia: https://docs.python.org/3/tutorial/controlflow.html#unpacking-argument-lists
     """
-    pass # Completar
+    return tuple(zip(*args))
+
 
 
 # NO MODIFICAR - INICIO

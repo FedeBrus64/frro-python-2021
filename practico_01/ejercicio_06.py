@@ -10,13 +10,13 @@ def numeros_al_final_basico(lista: List[Union[float, str]]) -> List[Union[float,
     
     listaFinal=[]
 
-    for i in range(len(lista)):
-        if type(lista[i]) == str:
-            listaFinal.append(lista[i])
+    for elemento in lista:
+        if type(elemento) == str:
+            listaFinal.append(elemento)
 
-    for i in range(len(lista)):
-        if type(lista[i]) != str:
-            listaFinal.append(lista[i])
+    for elemento in lista:
+        if type(elemento) != str:
+            listaFinal.append(elemento)
 
     return listaFinal
         

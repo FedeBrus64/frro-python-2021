@@ -10,7 +10,7 @@ def es_palindromo(palabra: str) -> bool:
     """
     if palabra == palabra [::-1]:
        return True
-    else: return False
+       return False
 
 
 # NO MODIFICAR - INICIO
