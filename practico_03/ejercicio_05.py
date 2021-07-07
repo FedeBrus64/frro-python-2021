@@ -11,7 +11,34 @@ class Auto:
     
     Referencia: https://docs.python.org/3/library/functions.html#property"""
 
-    # Completar
+    def __init__(self, _nombre, _precio):
+        self._nombre = _nombre
+        self._precio = _precio
+
+    def getnombre(self):
+        return str(self._nombre).capitalize()
+
+    def setnombre(self, value):
+        if self.nombre == "":
+            self._nombre = value
+        else:
+            raise AttributeError("No se puede cambiar el nombre")
+        
+    def delnombre(self):
+        del self._nombre
+    
+    def getprecio(self):
+        return round(self._precio, 2)
+
+    def setprecio(self, value):
+        self._precio = value
+
+    def delprecio(self):
+        del self._precio
+
+    nombre = property(getnombre, setnombre, delnombre)
+    precio = property(getprecio, setprecio, delprecio)
+
 
 
 # NO MODIFICAR - INICIO

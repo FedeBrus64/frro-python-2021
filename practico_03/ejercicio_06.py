@@ -16,7 +16,7 @@ class Article:
 
     # NO MODIFICAR - FIN
 
-    # Completar
+    
 
 
 # NO MODIFICAR - INICIO
